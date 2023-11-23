@@ -24,6 +24,18 @@
       Time Complexity:
           The time complexity is O(n), where n is the number of nodes in the graph. Each node is visited at most once during the DFS traversal.
       Space Complexity:
-          The space complexity is O(n) due to the `visited` array used to store the state of each node during the DFS traversal. The depth of the recursion stack is also proportional to the number             of nodes in the worst case.
+          The space complexity is O(n) due to the `visited` array used to store the state of each node during the DFS traversal. The depth of the recursion stack is also proportional to the number of nodes in the worst case.
+
+3. Connecting cities with minimum cost:
+     Algorithm:
+          1. Sort the connections by their costs in ascending order.
+          2. Initialize a disjoint set data structure using the `find` and `union` functions.
+          3. Iterate through the sorted connections and add the edge to the spanning tree if it doesn't create a cycle.
+          4. Keep track of the total cost and the number of edges added.
+          5. If the number of edges added is equal to N - 1 (the number of cities minus one), return the total cost; otherwise, return -1.
+   Time Complexity:
+     The time complexity is O(E * log(E)) where E is the number of connections. The dominant factor is the sorting of connections.
+   Space Complexity:
+     The space complexity is O(N) for the parent and rank arrays.
 
 
