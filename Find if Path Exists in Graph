@@ -1,0 +1,31 @@
+def validPath(n, edges, source, destination):
+    graph = {i: [] for i in range(n)}
+    for edge in edges:
+        graph[edge[0]].append(edge[1])
+        graph[edge[1]].append(edge[0])
+
+    def dfs(node, visited):
+        if node == destination:
+            return True
+        visited.add(node)
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                if dfs(neighbor, visited):
+                    return True
+        return False
+
+    visited = set()
+    return dfs(source, visited)
+
+# Example usage:
+n1 = 3
+edges1 = [[0, 1], [1, 2], [2, 0]]
+source1 = 0
+destination1 = 2
+print(validPath(n1, edges1, source1, destination1))  
+
+n2 = 6
+edges2 = [[0, 1], [0, 2], [3, 5], [5, 4], [4, 3]]
+source2 = 0
+destination2 = 5
+print(validPath(n2, edges2, source2, destination2))  
