@@ -38,4 +38,16 @@
    Space Complexity:
      The space complexity is O(N) for the parent and rank arrays.
 
+4. All paths from source to Target:
+     Algorithm:
+             Implement a DFS function (dfs) that takes the current node and the current path as parameters.
+             If the current node is the destination (node n-1), add a copy of the current path to the result.
+             Recursively explore all neighbors of the current node by calling dfs for each neighbor.
+             Start DFS from the source node (node 0) with an initial path containing only the source node.
+     Time Complexity:
+          The time complexity is O(2^N), where N is the number of nodes. In the worst case, all possible paths are explored.
+
+     Space Complexity:
+          The space complexity is O(N), where N is the number of nodes. This includes the space required for the recursive call stack during DFS.
+
 
